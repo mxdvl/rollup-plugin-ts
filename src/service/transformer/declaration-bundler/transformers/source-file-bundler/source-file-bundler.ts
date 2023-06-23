@@ -173,6 +173,9 @@ export function sourceFileBundler(options: DeclarationBundlerOptions, ...transfo
 			}
 		}
 
+		libReferenceDirectiveFileNames.delete("");
+		typeReferenceDirectiveFileNames.delete("");
+
 		for (const fileName of libReferenceDirectiveFileNames) {
 			prepends.push(typescript.createUnparsedSourceFile(formatLibReferenceDirective(fileName)));
 		}
